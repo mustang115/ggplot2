@@ -68,6 +68,12 @@ dia_plot <- dia_plot + geom_point(alpha=0.2)
 dia_plot <- dia_plot + geom_smooth(se=FALSE)
        
 
+# plotting the iris.tidy dataset, the ggplot way of doing things is to have 
+# facet measure, the factor to plot in each chart and the color measure and the y axis value all in one compact dataframe
+# it is interesting to see the data being modified to fit the code for charting
 
+ggplot(iris.tidy, aes(x = Species, y = Value, col = Part)) +
+  geom_jitter() +
+  facet_grid(. ~ Measure)
 
 
