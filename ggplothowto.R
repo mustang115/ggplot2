@@ -58,6 +58,14 @@ ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +
 ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +
   geom_point(alpha=0.4) +
 
+# assigning and plotting in multiple steps
+
+dia_plot <- ggplot(diamonds, aes(x = carat, y = price))
+
+dia_plot <- dia_plot + geom_point(alpha=0.2)
+
+  # if you dont want error shading, enabled by deafult it can be achieved by setting the se = FALSE
+dia_plot <- dia_plot + geom_smooth(se=FALSE)
        
 
 
